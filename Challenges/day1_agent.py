@@ -18,7 +18,7 @@ api_key = os.getenv("ANTHROPIC_API_KEY")
 
 # Disable SSL verification (workaround for corporate proxy/firewall)
 http_client = httpx.Client(verify=False)
-client = anthropic.Anthropic(api_key=api_key, http_client=http_client)
+client = anthropic.Anthropic(http_client=http_client)
 
 # message = client.messages.create(
 #     model="claude-sonnet-4-5",
@@ -31,6 +31,8 @@ client = anthropic.Anthropic(api_key=api_key, http_client=http_client)
 #     ]
 # )
 
+# print(message.content)
+
 message = client.messages.create(
     model="claude-sonnet-4-5",
     max_tokens=1024,
@@ -38,7 +40,8 @@ message = client.messages.create(
         {"role": "user","content":"Hello Claude!"},
         {"role": "assistant", "content": "Hello!"},
         {"role": "user", "content": "What is the meaning of life, the universe, and everything?"}
-    ]
+    ],
+    stream=True
 )
 
 print(message.content[0].text)
