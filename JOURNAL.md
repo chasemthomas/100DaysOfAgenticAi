@@ -7,16 +7,18 @@ Track your progress, insights, and challenges here.
 ## Week 1: Foundation
 
 ### Day 1 - First API Response
-**Date:**  
-**Time spent:**  
-**Completed:** [ ]  
+**Date:** Dec 22, 2025
+**Time spent:**  20 minutes
+**Completed:** [x]  
 **Git commit:**  
 
-**What I built:**
+**What I built:** 
+Simple client and message connection to Anthropic
 
 **What I learned:**
 
 **Challenges:**
+My corporate laptop messes with the connection, so I had to disable the ssl certification for this program, which should be okay because it's for educational purposes. 
 
 **Notes:**
 

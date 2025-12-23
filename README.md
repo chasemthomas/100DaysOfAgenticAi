@@ -92,7 +92,7 @@ Mark each day with ✅ when complete, add your commit hash for reference.
 
 ## **WEEK 1-2: Foundation (Days 1-14)**
 
-- [ ] **Day 1:** First API Response - Get a single response from Claude/OpenAI
+- [x] **Day 1:** First API Response - Get a single response from Claude/OpenAI
 - [ ] **Day 2:** User Input Loop - Accept ongoing conversation
 - [ ] **Day 3:** Conversation Memory - Track message history
 - [ ] **Day 4:** Streaming Responses - Real-time token display
