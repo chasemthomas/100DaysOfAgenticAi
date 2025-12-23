@@ -20,15 +20,25 @@ api_key = os.getenv("ANTHROPIC_API_KEY")
 http_client = httpx.Client(verify=False)
 client = anthropic.Anthropic(api_key=api_key, http_client=http_client)
 
+# message = client.messages.create(
+#     model="claude-sonnet-4-5",
+#     max_tokens=1000,
+#     messages=[
+#         {
+#             "role": "user",
+#             "content":"Hello Claude!"
+#         }
+#     ]
+# )
+
 message = client.messages.create(
     model="claude-sonnet-4-5",
-    max_tokens=1000,
+    max_tokens=1024,
     messages=[
-        {
-            "role": "user",
-            "content":"Hello Claude!"
-        }
+        {"role": "user","content":"Hello Claude!"},
+        {"role": "assistant", "content": "Hello!"},
+        {"role": "user", "content": "What is the meaning of life, the universe, and everything?"}
     ]
 )
 
-print(message.content)
+print(message.content[0].text)
