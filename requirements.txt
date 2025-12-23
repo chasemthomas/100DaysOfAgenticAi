@@ -1,0 +1,10 @@
+# Initial requirements - you'll add more as you progress
+anthropic>=0.18.0
+python-dotenv>=1.0.0
+
+# You'll add these later:
+# chromadb
+# fastapi
+# pandas
+# matplotlib
+# pytest
