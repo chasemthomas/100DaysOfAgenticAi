@@ -41,7 +41,6 @@ message = client.messages.create(
         {"role": "assistant", "content": "Hello!"},
         {"role": "user", "content": "What is the meaning of life, the universe, and everything?"}
     ],
-    stream=True
 )
 
 print(message.content[0].text)
