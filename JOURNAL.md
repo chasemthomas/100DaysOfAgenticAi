@@ -78,7 +78,7 @@ Wrap your API call in a `while True` loop that takes user input and displays res
 ### Day 3 - Conversation Memory - Track message history
 Create a `conversation_history` list that stores all user and assistant messages. Pass this full history to each API call.
 
-**Date:**  
+**Date:** 12/24/2025
 **Completed:** [ ]  
 
 **What I built:**
@@ -88,6 +88,22 @@ Create a `conversation_history` list that stores all user and assistant messages
 **Challenges:**
 
 **Notes:**
+
+I started off by creating a new page with comment hints guiding me to reproducing yesterday's answer. The repetition is helpful, I only missed a few things. 
+
+So, yesterday learned that the bot has no memory of previous questions because each call is a new conversation. So for this challenge I'm going to save each question/answer to a variable and pass that in as context to each call. 
+
+This new variable gets initialized before the `while True` statement. I append the question to it. But then how do I save the answer? If conversation_history is a global variable I can append both to it. So I'll add it to the top. 
+
+Inside the call_claude function I'm appanding conversation history twice: once with user message and once with the text of the convesation. The first question I told in my my name. Then the second question I asked it my name, but it didn't know. 
+
+I have the variable and am printing it to console, but I'm not passing it to the api call. That's the issue. 
+
+I created a prompt and pass in the conversation history using an f-string. But I'm wondering if conversation history now needsto be passed into call claude. I think it does.
+
+How do I pass in an empty vairable? conversation_history=None
+
+Got it. I have to append each turn of the conversation is a dictionary with role and content. Now it is able to remember previous parts of the conversation. 
 
 ---
 
