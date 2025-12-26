@@ -159,16 +159,21 @@ Use Python's `json` module to save `conversation_history` to a file when user qu
 ### Day 7 - Error Handling - Network errors, rate limits, graceful failures
 Wrap API calls in try/except blocks to catch `APIError`, `APIConnectionError`, and `RateLimitError`. Display friendly error messages.
 
-**Date:**  
-**Completed:** [ ]  
-
-**What I built:**
-
-**What I learned:**
-
-**Challenges:**
+**Date:**  Dec 26, 2025
 
 **Notes:**
+
+I connected the repo to OpenAi's codex and asked for a code review. Here are the suggestions:
+
+1. Split call_claude into smaller functions ✅
+2. Centralize History Load/Save into smaller standalone functions ✅
+3. Make history path configurable ✅
+4. Add exceptions to handle APIError, APIConnectionError, and RateLimitError ✅
+5. Append history only after success or record an error response. This will avoid partial history updates on failure. ✅
+6. Add a KeyboardInterrupt handler during streaming ✅
+7. Avoid Printing Entire History Every Time. Only print latest response. ✅
+---
+
 
 ---
 

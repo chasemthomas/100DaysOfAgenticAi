@@ -16,24 +16,6 @@ http_client = httpx.Client(verify=False)
 
 client = anthropic.Anthropic(http_client=http_client)
 
-"""
-Day 6 - Save Conversations - Persist to JSON file
-Use Python's `json` module to save `conversation_history` to a file when user quits, and load it on startup.
-"""
-
-
-# Import statements
-import json
-import anthropic
-import httpx 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-http_client = httpx.Client(verify=False)
-
-client = anthropic.Anthropic(http_client=http_client)
-
 def call_claude(user_message, conversation_history):
     conversation_history.append({"role": "user", "content": user_message})
 
