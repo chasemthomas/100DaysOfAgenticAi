@@ -174,6 +174,7 @@ I connected the repo to OpenAi's codex and asked for a code review. Here are the
 7. Avoid Printing Entire History Every Time. Only print latest response. ✅
 ---
 
+After completing the above chanages I asked Claude in my IDE to code review and went through a couple rounds. The result isn't perfect but is better than where it was before. 
 
 ---
 
