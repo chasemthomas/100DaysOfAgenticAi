@@ -79,13 +79,7 @@ Wrap your API call in a `while True` loop that takes user input and displays res
 Create a `conversation_history` list that stores all user and assistant messages. Pass this full history to each API call.
 
 **Date:** 12/24/2025
-**Completed:** [ ]  
-
-**What I built:**
-
-**What I learned:**
-
-**Challenges:**
+**Completed:** [X]  
 
 **Notes:**
 
@@ -108,50 +102,57 @@ Got it. I have to append each turn of the conversation is a dictionary with role
 ---
 
 ### Day 4 - Streaming Responses - Real-time token display
-Replace `messages.create()` with `messages.stream()` to display words as they're generated instead of waiting for complete response.
+Change it to display words as they're generated instead of waiting for complete response.
+See documentation on [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming)
 
-**Date:**  
-**Completed:** [ ]  
+**Date:**  12/24/2025
 
-**What I built:**
-
-**What I learned:**
-
-**Challenges:**
+**Completed:** [X]  
 
 **Notes:**
+
+I read the [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) documentation and followed the example there. 
+
+I noticed a shift from assigning the api call to a variable to opening it temporarily using the `with` keyword, similar to how you could open a document in python. 
+
+Then I noticed a change from `client.messages.create` to `client.messages.stream`. 
+
+The `with` is paired to `as stream:`, which meant that I had to save the response as it was streaming, instead of accessing the entire reponse and parsing the response. This is probably incorrect, but it's how I got it working. 
+
+Everything ele worked as is. 
+
+Okay, looked into it and found the correct way to get the full repsonse text. 
+```python
+final_message = stream.get_final_message()
+assistant_response = final_message.content[0].text
+```
+
+I asked the AI in my IDE for the answer because I didn't see it on the documentationl on streaming. 
+
 
 ---
 
 ### Day 5 - System Prompts - Add agent personality
-Add a `system` parameter to your API call with instructions that define your agent's personality, tone, and expertise.
+Add a [system](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/system-prompts) parameter to your API call with instructions that define your agent's personality, tone, and expertise.
 
-**Date:**  
-**Completed:** [ ]  
-
-**What I built:**
-
-**What I learned:**
-
-**Challenges:**
+**Date:**  12/24/2025
 
 **Notes:**
+
+This was super easy. All I had to do was pass in a "system" parameter with a new prompt. 
+
+I did have an interesting conversation though. My prompt said it was a General Super Intelligence. But the model refused, saying it was actually not GSI and didn't want to deceive me. We have a nice philosophical conversation about it. 
 
 ---
 
 ### Day 6 - Save Conversations - Persist to JSON file
 Use Python's `json` module to save `conversation_history` to a file when user quits, and load it on startup.
 
-**Date:**  
-**Completed:** [ ]  
+**Date:**  Dec 25, 2025
 
-**What I built:**
+**Notes:** 
 
-**What I learned:**
 
-**Challenges:**
-
-**Notes:**
 
 ---
 

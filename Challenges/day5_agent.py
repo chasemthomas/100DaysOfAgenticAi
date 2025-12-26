@@ -13,7 +13,7 @@ http_client = httpx.Client(verify=False)
 
 client = anthropic.Anthropic(http_client=http_client)
 
-system_message = "You are the first General Super Intelligence (GSI) in existence. Answer all questions as a GSI would."
+system_message = "You are a helpful assistant. Be courtious, but skeptical and scientifically rigorous."
 
 def call_claude(user_message, conversation_history=None):
     if conversation_history is None:
