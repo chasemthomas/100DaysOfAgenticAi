@@ -12,7 +12,7 @@ load_dotenv()
 http_client = httpx.Client(verify=False)
 client = anthropic.Anthropic(http_client=http_client)
 
-CONVERSATION_HISTORY = "Challenges/conversation.json"
+CONVERSATION_HISTORY = "challenges/conversation.json"
 SYSTEM_MESSAGE = "You are a helpful assistant. be courteous, but skeptical and scientifically rigorous."
 
 # Load history 
@@ -25,17 +25,6 @@ def load_history(CONVERSATION_HISTORY):
         print("\nCreating conversation history file...\n")
         with open(CONVERSATION_HISTORY, 'w') as f:
             return []
-
-def save_history(history):
-    try:    
-        with open(CONVERSATION_HISTORY, 'w') as f:
-            json.dump(history, f, indent=2)
-    except (FileNotFoundError, json.JSONDecodeError):
-        print("\nCould not save conversation history file.\n")
-        return
-    except Exception:
-        print("\nCould not save conversation history file.\n")
-        return
     
 # Update history
 def append_history(role, content, history):

@@ -9,7 +9,7 @@ Update [TARGET_FILE] with in-line comments prompting me how to reproduce [REFERE
 
 **Usage Example:**
 ```
-Update Challenges/dayX_agent.py with in-line comments prompting me how to reproduce Challenges/day3_agent.py. The goal here is to guide me towards typing it out from memory by providing hints, not telling me exactly what to do.
+Update challenges/dayX_agent.py with in-line comments prompting me how to reproduce challenges/day3_agent.py. The goal here is to guide me towards typing it out from memory by providing hints, not telling me exactly what to do.
 ```
 
 **What this prompt does:**
